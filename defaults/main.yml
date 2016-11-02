@@ -1,0 +1,10 @@
+---
+
+postgres_backup_dir: /data/backup/postgres
+postgres_backup_dbnames: all
+postgres_backup_dbnames_exclude: ''
+postgres_backup_email: false
+# log, fliles, stdout - see "Mail setup" in script
+postgres_backup_mailcontent: stdout
+postgres_backup_compression_type: gzip # gzip, bzip2
+postgres_backup_weekly_day: 6 # 6 = saturday

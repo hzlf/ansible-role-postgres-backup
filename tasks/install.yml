@@ -1,0 +1,17 @@
+---
+
+- name: postgres backup | install script
+  template:
+    src: autopgsqlbackup.j2
+    dest: /usr/local/sbin/autopgsqlbackup
+    owner: root
+    group: root
+    mode: 0755
+
+- name: postgres backup | configure cron job
+  cron:
+    name: "postgres backup"
+    minute: "5"
+    hour: "5"
+    job: /usr/local/sbin/autopgsqlbackup
+    state: present
